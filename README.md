@@ -48,7 +48,7 @@ All other page regions, notifications, and accessibility features remain fully i
 If Tampermonkey is already installed, navigate directly to the raw script URL and Tampermonkey will prompt you to install it automatically:
 
 ```
-https://raw.githubusercontent.com/<your-org>/ARIA-Live-Region-Suppression-Workaround-CCP/main/suppress-aria-ccp.user.js
+https://raw.githubusercontent.com/The-Chicago-Lighthouse/ARIA-Live-Region-Suppression-Workaround-CCP/main/suppress-aria-ccp.user.js
 ```
 
 ---
