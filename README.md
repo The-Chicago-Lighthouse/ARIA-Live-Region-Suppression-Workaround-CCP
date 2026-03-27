@@ -39,7 +39,7 @@ All other page regions, notifications, and accessibility features remain fully i
 1. Install Tampermonkey for your browser using the links above
 2. Enable Developer Mode in your browser's extensions page
 3. Click the Tampermonkey icon → **Create new script**
-4. Replace the default content with the contents of [`suppress-aria-ccp.user.js`](./Script/suppress-aria-ccp.user.js)
+4. Replace the default content with the contents of [`suppress-aria-ccp.user.js`](./https://github.com/The-Chicago-Lighthouse/ARIA-Live-Region-Suppression-Workaround-CCP/blob/main/Script/suppress-aria-ccp.user.js)
 5. Save with `Ctrl+S`
 6. Open Amazon Connect — suppression activates automatically
 
@@ -48,7 +48,7 @@ All other page regions, notifications, and accessibility features remain fully i
 If Tampermonkey is already installed, navigate directly to the raw script URL and Tampermonkey will prompt you to install it automatically:
 
 ```
-https://raw.githubusercontent.com/The-Chicago-Lighthouse/ARIA-Live-Region-Suppression-Workaround-CCP/main/Script/suppress-aria-ccp.user.js
+https://github.com/The-Chicago-Lighthouse/ARIA-Live-Region-Suppression-Workaround-CCP/blob/main/Script/Suppress%20ARIA%20-%20CCP%20Softphone%20Tab%20%26%20Task%20Row-4.1.user.js
 ```
 
 ---
