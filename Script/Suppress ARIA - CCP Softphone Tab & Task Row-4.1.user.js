@@ -6,7 +6,6 @@
 // @match        *://*.my.connect.aws/ccp-v2/channel-view/*
 // @match        *://*.connect.aws/ccp-v2/task-list*
 // @match        *://*.my.connect.aws/ccp-v2/task-list*
-// @match        *://*.novelvox.net/chicagolighthouse*
 // @run-at       document-idle
 // @grant        unsafeWindow
 // ==/UserScript==
