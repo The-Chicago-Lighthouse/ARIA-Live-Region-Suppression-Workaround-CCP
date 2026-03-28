@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Suppress ARIA - CCP Softphone Tab & Task Row
 // @namespace    http://tampermonkey.net/
-// @version      4.1
+// @version      4.2
 // @match        *://*.connect.aws/ccp-v2/channel-view/*
 // @match        *://*.my.connect.aws/ccp-v2/channel-view/*
 // @match        *://*.connect.aws/ccp-v2/task-list*
@@ -13,7 +13,7 @@
 (function () {
   'use strict';
 
-  const log = (msg) => console.warn('[ARIA Suppress v4.1]', msg);
+  const log = (msg) => console.warn('[ARIA Suppress v4.2]', msg);
   const path = unsafeWindow.location.pathname;
   const isChannelView = path.includes('/ccp-v2/channel-view');
   const isTaskList = path.includes('/ccp-v2/task-list');
@@ -21,17 +21,18 @@
   const suppress = () => {
 
     if (isChannelView) {
-      // Target 1: MainBannerArea live region inside softphone tab
-      const softphone = unsafeWindow.document.querySelector('[data-testid="ccp-softphone-connectiontab-primary"]');
-      if (softphone) {
-        const liveRegion = softphone.querySelector('[class*="MainBannerArea"]');
+      // Target 1: MainBannerArea in ALL connection tabs
+      // Catches: primary, thirdparty, thirdparty-1, thirdparty-2 ... etc.
+      // Safely skips tabs without MainBannerArea (e.g. -close tabs)
+      unsafeWindow.document.querySelectorAll('[data-testid^="ccp-softphone-connectiontab-"]').forEach(tab => {
+        const liveRegion = tab.querySelector('[class*="MainBannerArea"]');
         if (liveRegion) {
           liveRegion.removeAttribute('aria-live');
           liveRegion.removeAttribute('aria-atomic');
           liveRegion.setAttribute('aria-hidden', 'true');
-          log('✅ Suppressed MainBannerArea');
+          log('✅ Suppressed MainBannerArea in: ' + tab.getAttribute('data-testid'));
         }
-      }
+      });
     }
 
     if (isTaskList) {
@@ -47,7 +48,7 @@
           });
       });
 
-      // Target 3: Agent status timer inside ccp-header-agent-status-timer
+      // Target 3: Agent status timer
       const timerContainer = unsafeWindow.document.querySelector('[data-testid="ccp-header-agent-status-timer"]');
       if (timerContainer) {
         const timerSpan = timerContainer.querySelector('[role="timer"]');
