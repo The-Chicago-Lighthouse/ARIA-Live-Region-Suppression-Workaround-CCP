@@ -16,9 +16,11 @@ This workaround suppresses only the identified noisy regions without modifying t
 
 | Target | `data-testid` | iframe | ARIA Attribute Removed |
 |---|---|---|---|
-| Softphone connection tab banner | `ccp-softphone-connectiontab-primary` | `ccp-v2/channel-view` | `aria-live`, `aria-atomic` |
+| Softphone connection tabs (all) | `ccp-softphone-connectiontab-*` | `ccp-v2/channel-view` | `aria-live`, `aria-atomic` |
 | Agent status timer | `ccp-header-agent-status-timer` | `ccp-v2/task-list` | `role="timer"` |
 | Task row live regions | `task-list-task-row` | `ccp-v2/task-list` | `aria-live`, `aria-atomic`, `role` |
+
+> The `*` wildcard covers `primary`, `thirdparty`, `thirdparty-1`, `thirdparty-2`, and any future variants added by Amazon Connect for multi-party calls. Tabs without a `MainBannerArea` element (e.g. `-close` tabs) are automatically skipped.
 
 All other page regions, notifications, and accessibility features remain fully intact.
 
