@@ -2,6 +2,8 @@
 // @name         Suppress ARIA - CCP Softphone Tab & Task Row
 // @namespace    http://tampermonkey.net/
 // @version      5.0
+// @description  A browser-side Tampermonkey userscript that suppresses disruptive ARIA live region announcements in the Amazon Connect Contact Control Panel (CCP) for screen reader users.
+// @author       Esmeil Naqeeb
 // @match        *://*.connect.aws/ccp-v2/channel-view/*
 // @match        *://*.my.connect.aws/ccp-v2/channel-view/*
 // @match        *://*.connect.aws/ccp-v2/task-list*
